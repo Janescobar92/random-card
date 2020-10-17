@@ -12,31 +12,32 @@ let myButton = document.querySelector("#myBtn");
 myButton.addEventListener("click", function() {
   randomCard();
 });
+
+randomIndex = (array) => {
+ let radomNumber = Math.floor(Math.random() * array.length);
+ return array[radomNumber];
+}
+
 function randomCard() {
-  let suit = Math.floor(Math.random() * suits.length);
-  let n = Math.floor(Math.random() * number.length);
-
   cardColor(suit);
-
   let divSuitA = document.querySelector("#deckSuitA");
   let divSuitB = document.querySelector("#deckSuitB");
   let divNumber = document.querySelector("#cardNumber");
-
-  divSuitA.innerHTML = suits[suit];
-  divSuitB.innerHTML = suits[suit];
-  divNumber.innerHTML = number[n];
+  divSuitA.innerHTML = randomIndex(suits);
+  divSuitB.innerHTML = randomIndex(suits);
+  divNumber.innerHTML = randomIndex(number);
 }
 
 function cardColor(suit) {
   if (suit == 0 || suit == 1) {
     let redColorTop = document.querySelector("#deckSuitA");
     let redColorBottom = document.querySelector("#deckSuitB");
-    redColorTop.className = "paloa text-danger";
-    redColorBottom.className = "palob text-danger";
+    redColorTop.className = "suitTop text-danger";
+    redColorBottom.className = "suitBottom text-danger";
   } else {
     let blackColorTop = document.querySelector("#deckSuitA");
     let blackColorBottom = document.querySelector("#deckSuitB");
-    blackColorTop.className = "paloa text-dark";
-    blackColorBottom.className = "palob text-dark";
+    blackColorTop.className = "suitTop text-dark";
+    blackColorBottom.className = "suitBottom text-dark";
   }
 }
