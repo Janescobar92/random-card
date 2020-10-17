@@ -5,7 +5,7 @@ import "../assets/img/4geeks.ico";
 //import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
-const suits = ["\u25ca", "\u2665", "\u2660", "\u2663"];
+const suits = ["\u2666", "\u2665", "\u2660", "\u2663"];
 const number = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 let myButton = document.querySelector("#myBtn");
 
@@ -30,7 +30,7 @@ function randomCard() {
 }
 
 function cardColor(suit) {
-  if (suit == "\u25ca" || suit == "\u2665") {
+  if (suit == "\u2666" || suit == "\u2665") {
     let redColorTop = document.querySelector("#deckSuitA");
     let redColorBottom = document.querySelector("#deckSuitB");
     redColorTop.className = "suitTop text-danger";
