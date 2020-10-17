@@ -13,10 +13,10 @@ myButton.addEventListener("click", function() {
   randomCard();
 });
 
-randomIndex = (array) => {
- let radomNumber = Math.floor(Math.random() * array.length);
- return array[radomNumber];
-}
+randomIndex = array => {
+  let radomNumber = Math.floor(Math.random() * array.length);
+  return array[radomNumber];
+};
 
 function randomCard() {
   cardColor(suit);
