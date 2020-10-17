@@ -13,23 +13,24 @@ myButton.addEventListener("click", function() {
   randomCard();
 });
 
-randomIndex = array => {
+let randomIndex = array => {
   let radomNumber = Math.floor(Math.random() * array.length);
   return array[radomNumber];
 };
 
 function randomCard() {
-  cardColor(suit);
+  let suitRandomIndex = randomIndex(suits);
+  cardColor(suitRandomIndex);
   let divSuitA = document.querySelector("#deckSuitA");
   let divSuitB = document.querySelector("#deckSuitB");
   let divNumber = document.querySelector("#cardNumber");
-  divSuitA.innerHTML = randomIndex(suits);
-  divSuitB.innerHTML = randomIndex(suits);
+  divSuitA.innerHTML = suitRandomIndex;
+  divSuitB.innerHTML = suitRandomIndex;
   divNumber.innerHTML = randomIndex(number);
 }
 
 function cardColor(suit) {
-  if (suit == 0 || suit == 1) {
+  if (suit == "\u25ca" || suit == "\u2665") {
     let redColorTop = document.querySelector("#deckSuitA");
     let redColorBottom = document.querySelector("#deckSuitB");
     redColorTop.className = "suitTop text-danger";
