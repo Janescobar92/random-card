@@ -8,6 +8,8 @@ import "../style/index.scss";
 const suits = ["\u2666", "\u2665", "\u2660", "\u2663"];
 const number = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 let myButton = document.querySelector("#myBtn");
+const divSuitA = document.querySelector("#deckSuitA");
+const divSuitB = document.querySelector("#deckSuitB");
 
 myButton.addEventListener("click", function() {
   randomCard();
@@ -21,8 +23,6 @@ let randomIndex = array => {
 function randomCard() {
   let suitRandomIndex = randomIndex(suits);
   cardColor(suitRandomIndex);
-  let divSuitA = document.querySelector("#deckSuitA");
-  let divSuitB = document.querySelector("#deckSuitB");
   let divNumber = document.querySelector("#cardNumber");
   divSuitA.innerHTML = suitRandomIndex;
   divSuitB.innerHTML = suitRandomIndex;
@@ -31,13 +31,13 @@ function randomCard() {
 
 function cardColor(suit) {
   if (suit == "\u2666" || suit == "\u2665") {
-    let redColorTop = document.querySelector("#deckSuitA");
-    let redColorBottom = document.querySelector("#deckSuitB");
+    let redColorTop = divSuitA;
+    let redColorBottom = divSuitB;
     redColorTop.className = "suitTop text-danger";
     redColorBottom.className = "suitBottom text-danger";
   } else {
-    let blackColorTop = document.querySelector("#deckSuitA");
-    let blackColorBottom = document.querySelector("#deckSuitB");
+    let blackColorTop = divSuitA;
+    let blackColorBottom = divSuitB;
     blackColorTop.className = "suitTop text-dark";
     blackColorBottom.className = "suitBottom text-dark";
   }
